@@ -1,10 +1,11 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id "net.researchgate.release" version "2.6.0"
 }
 
 group 'org.example'
-version '1.0'
+version project.version
 
 sourceCompatibility = 1.8
 
@@ -44,5 +45,18 @@ publishing {
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
+    }
+}
+
+release {
+    // Disable check snapshots temporarily
+    buildTasks = []
+    failOnSnapshotDependencies = false
+    failOnCommitNeeded = false
+    versionPropertyFile = 'gradle.properties'
+    tagTemplate = 'v${version}'
+    git {
+        // To release from any branch
+        requireBranch = null
     }
 }
