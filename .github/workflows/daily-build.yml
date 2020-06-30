@@ -2,7 +2,7 @@ name: Daily build
 
 on:
   schedule:
-    - cron:  '2 7 * * *'
+    - cron:  '6 18 * * *'
 
 jobs:
   ubuntu-build:
