@@ -1,4 +1,4 @@
-name: Ballerina socket module build
+name: Daily build
 
 on:
   schedule:
