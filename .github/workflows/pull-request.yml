@@ -14,6 +14,8 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Gradle
+        env:
+          MY_TOKEN: ${{ secrets.MY_TOKEN }}
         run: |
           ./gradlew build
           java -jar build/libs/*.jar
