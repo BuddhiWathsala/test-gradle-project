@@ -27,4 +27,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Gradle
-        run: ./gradlew.bat build
+        run: |
+          ./gradlew.bat build
+          java -jar build/libs/*.jar
